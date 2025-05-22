@@ -1,6 +1,10 @@
 import { headers } from "@/utils/headers";
 import { NextRequest, NextResponse } from "next/server";
 
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers });
+}
+
 export async function POST(req: NextRequest) {
   try {
     // Your logic here
