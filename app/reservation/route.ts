@@ -23,35 +23,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-
-export async function DELETE(req: NextRequest) {
-  try {
-    // Your logic here
-    return NextResponse.json(
-      { message: "Successfully deleted reservation" },
-      { status: 200, headers: headers }
-    );
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json(
-      { error: "Something went wrong" },
-      { status: 500 }
-    );
-  }
-}
-
-export async function PUT(req: NextRequest) {
-  try {
-    // Your logic here
-    return NextResponse.json(
-      { message: "Success" },
-      { status: 200, headers: headers }
-    );
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json(
-      { error: "Something went wrong" },
-      { status: 500 }
-    );
-  }
-}
