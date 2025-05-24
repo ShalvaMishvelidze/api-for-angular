@@ -45,3 +45,6 @@ next-env.d.ts
 /db.sqlite
 ./db.sqlite
 db.sqlite
+/db.sqlite-journal
+./db.sqlite-journal
+db.sqlite-journal

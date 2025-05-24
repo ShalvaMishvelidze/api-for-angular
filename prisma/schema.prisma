@@ -22,3 +22,10 @@ model Reservation {
   checkInDate DateTime
   checkOutDate DateTime
 }
+
+model Product {
+  id Int @id @default(autoincrement())
+  name String
+  price Float
+  image_url String
+}
