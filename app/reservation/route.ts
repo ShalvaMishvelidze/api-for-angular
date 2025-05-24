@@ -1,3 +1,4 @@
+import { prisma } from "@/lib/prisma";
 import { headers } from "@/utils/headers";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -6,19 +7,17 @@ export async function OPTIONS() {
 }
 
 export async function POST(req: NextRequest) {
+  const reservationData = await req.json();
   try {
-    // Your logic here
-    return NextResponse.json(
-      {
-        id: "1",
-        guestName: "John Doe",
-        guestEmail: "john@doe.com",
-        roomNumber: 101,
-        checkInDate: "2023-10-01",
-        checkOutDate: "2023-10-05",
+    const newReservation = await prisma.reservation.create({
+      data: {
+        ...reservationData,
+        checkInDate: new Date(reservationData.checkInDate),
+        checkOutDate: new Date(reservationData.checkOutDate),
       },
-      { status: 200, headers: headers }
-    );
+    });
+
+    return NextResponse.json(newReservation, { status: 200, headers: headers });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
