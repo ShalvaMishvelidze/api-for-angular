@@ -1,10 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { headers } from "@/utils/headers";
 import { NextRequest, NextResponse } from "next/server";
-
-export async function OPTIONS() {
-  return new NextResponse(null, { status: 204, headers });
-}
 
 export async function GET(
   _: NextRequest,
@@ -15,7 +10,7 @@ export async function GET(
     const reservation = await prisma.reservation.findUniqueOrThrow({
       where: { id },
     });
-    return NextResponse.json(reservation, { status: 200, headers: headers });
+    return NextResponse.json(reservation, { status: 200 });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
@@ -35,7 +30,7 @@ export async function DELETE(
       where: { id },
     });
 
-    return NextResponse.json({}, { status: 204, headers: headers });
+    return NextResponse.json({}, { status: 204 });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
@@ -63,7 +58,6 @@ export async function PUT(
     });
     return NextResponse.json(newReservation, {
       status: 200,
-      headers: headers,
     });
   } catch (error) {
     console.error(error);

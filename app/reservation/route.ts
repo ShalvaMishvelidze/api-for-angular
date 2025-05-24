@@ -1,10 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { headers } from "@/utils/headers";
 import { NextRequest, NextResponse } from "next/server";
-
-export async function OPTIONS() {
-  return new NextResponse(null, { status: 204, headers });
-}
 
 export async function POST(req: NextRequest) {
   const reservationData = await req.json();
@@ -17,7 +12,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    return NextResponse.json(newReservation, { status: 200, headers: headers });
+    return NextResponse.json(newReservation, { status: 200 });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
