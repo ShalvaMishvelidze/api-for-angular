@@ -4,7 +4,13 @@ Next.js api for practice angular projects.
 
 ## Getting Started
 
-First add DATABASE_URL to your .env file
+First add DATABASE_URL to your .env file. Eg:
+
+```bash
+DATABASE_URL="file:../db.sqlite"
+```
+
+note\*: "file:" part of the database url is absolutely necessary if you plan on using sqlite database.
 
 Then, run the development server:
 
