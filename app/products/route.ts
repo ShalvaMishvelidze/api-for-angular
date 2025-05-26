@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import Data from "@/assets/Amazing Animal Paintings.json";
+import Data from "@/assets/mock-data.json";
 
 export async function GET(req: NextRequest) {
   try {
