@@ -25,3 +25,8 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Connected Projects:
+
+- [E-Commerce Angular App](https://github.com/ShalvaMishvelidze/e-commerce-app-angular)
+- [Reservations Angular App](https://github.com/ShalvaMishvelidze/reservations-angular)
