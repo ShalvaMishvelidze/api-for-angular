@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 
 export async function DELETE(_: NextRequest) {
   try {
-    return NextResponse.json({}, { status: 204 });
+    return new NextResponse(null, { status: 204 });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
