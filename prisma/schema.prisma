@@ -23,7 +23,7 @@ model Reservation {
   checkOutDate DateTime
 }
 
-model Product {
+model Cart {
   id Int @id @default(autoincrement())
   name String
   price Float
